@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./nxt-logo-club.png" type="image/x-icon">
+    <title>DHAN FLY HIGH</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+    <style>
+        .logo-container {
+            width: 100%; /* Full width of the page */
+            background-color: #fff; /* Optional background for the logo area */
+        }
+        .logo {
+            width: 100%; /* Full width for the logo */
+            max-height: 200px; /* Adjust the max height if needed */
+            object-fit: cover; /* Ensures the image maintains its aspect ratio */
+        }
+        .container {
+            height: calc(100vh - 200px); /* Full height minus logo's height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center the button vertically */
+            align-items: center;
+        }
+        .circle-button {
+            width: 200px; /* Diameter of the button */
+            height: 200px;
+            background-color: #007BFF; /* Blue color */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Makes it circular */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px; /* Increased font size */
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .circle-button:hover {
+            transform: scale(1.1); /* Slight zoom effect */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+        }
+        #sectiona{
+            background-color: #ffe099;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        #sectionb {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: auto;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+        .video-text {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            color: #ffe099;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Logo2 on Top-Left */
+        .logo2 {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 2;
+        }
+        .logo2 img {
+            height: 150px;
+            object-fit: contain;
+        }        
+
+        /* Content Sections */
+        .section {
+            padding: 50px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        .section:nth-child(even) {
+            background-color: #ffe099;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
+        .clg-name {
+            font-family: 'Enriqueta', sans-serif;
+            text-align: center;
+            font-size: 1.6vw;
+            letter-spacing: 1vw;
+            font-weight: bold;
+            height: 30px;
+        }
+
+        .sunny-morning-gradient {
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            background-size: cover;
+            color: black;
+        }
+
+
+        .sectionpage2 {
+            padding: 50px;
+        }
+        .h1page2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .ulpage2{
+            padding-left: 20px;
+        }
+        .lipage2{
+            margin-bottom: 10px;
+        }
+        .card {
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .scrollable {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .sectionpage2:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        .sectionpage2:nth-child(even) {
+            background-color: #ffe099;
+        }
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        /* Internships Section */
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+        .card {
+            margin: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-title {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;  /* Sets the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: orange;  /* Dark gray color for the scrollbar thumb */
+    border-radius: 4px;  /* Optional: makes the scrollbar thumb rounded */
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;  /* Black background for the scrollbar track */
+}
+
+/* Navbar styles */
+.sticky-navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background-color: transparent;
+            padding: 30px 20px;
+            transition: background-color 0.3s ease, padding 0.3s ease;
+        }
+
+        .sticky-navbar.scrolled {
+            background-color: #343a40;
+            padding: 10px 20px;
+            color: white;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .sticky-navbar a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .sticky-navbar.scrolled a {
+            color: white;
+        }
+
+        /* Hamburger menu alignment */
+        .navbar-toggler {
+            margin-left: auto;
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* Close icon for hamburger */
+        .navbar-toggler.open .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3E%3C/svg%3E");
+        }
+
+        /* Responsive navbar: hide items for small screens */
+        
+
+.w-50 {
+    width: 50%; /* You can adjust the width as needed */
+    max-width: 800px; /* Optional, limits the max width of the carousel */
+}
+
+.collogos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.colLogo {
+    width: 120px;  /* Adjust based on the size of the logos */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.colLogo:hover {
+    transform: scale(1.1); /* Adds a hover effect to enlarge the logos */
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta&family=Headland+One&display=swap');
+        #background-unique {
+            background-color: #f6d365;
+        }
+        .clg-name-unique {
+            font-family: 'Enriqueta', sans-serif; 
+            text-align: center;
+            font-size: 1.6vw;
+            letter-spacing: 1vw;
+            font-weight: bold;
+        }
+        .sunny-morning-gradient-unique {
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            background-size: cover; 
+            color: black; 
+            padding: 10px 0; 
+        }
+        header {
+            background-color: black;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section.unique-section {
+            padding: 20px;
+            margin: 10px 20px 0px 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: black;
+        }
+        #list-unique {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        #heading-unique {
+            color: white;
+        }
+        .text-unique {
+            font-size: 20px;
+            color: black;
+        }
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+            font-family: 'Enriqueta', sans-serif;
+        }
+        #team-name-unique {
+            font-family: 'Headland One', serif;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            bottom: 0;
+            width: 100%;
+            font-size: 15px;
+            color: #333;
+        }
+        .carou{
+            height: 400px;
+        }
+        .carou-cer{
+            height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="sectiona">
+        <div class="logo-container">
+            <img src="./nxt-main-logo.jpg" class="logo" alt="Logo">
+        </div>
+        <div class="container">
+            <button class="circle-button" onclick="display('sectionb')">Harsha Fly Zone</button>
+        </div>
+    </div>
+
+    <div class="next-page" id="sectionb">
+    <div class="container-fluid clg-name sunny-morning-gradient " >
+        HARSHA INSTITUTE OF ENGINEERING & TECHNOLOGY
+    </div>
+    <!-- Video Section -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="logo2">
+            <img src="./nxt-logo-club.png" onclick="display('sectiona')" alt="Logo2">
+        </div>
+
+
+        <nav class="sticky-navbar navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Navbar Logo (optional) -->
+                <!-- <img src="logo.png" alt="Logo" class="navbar-logo"> -->
+                <!-- Hamburger menu -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapsible Navbar Links -->
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link text-dark" href="#aim">Aim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#objectives">Objectives</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#goals">Goals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#executive-members">Executives</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#internships">Internships</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#activities-events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#collaborations">Collaborations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#workshops">Workshops</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+
+
+
+        <div class="video-text">
+            Empowering Tomorrow’s Innovators<br>to Transform the Skies!
+        </div>
+    </div>
+
+    <div id="aim" class="sectionpage2">
+        <h1>Aim</h1>
+        <ul>
+            <li>The Drone Research and Development Lab in collaboration with Dronacharya Tech-Hub Provides Drone Project based learning solu- tions tailored for technical education.</li>
+            <li>The Drone Research and Development lab offer a hand on inter disciplinary approach, empowering students to apply the theoretical knowledge in real world scenarios using drone technology.</li>
+        </ul>
+    </div>
+
+    <!-- Objectives Section -->
+    <div id="objectives" class="sectionpage2">
+        <h1>Objectives</h1>
+        <ul>
+            <li>The main objective of Drone Research and Development lab is to make the students under- stand the latest technology of drone's that will be helpful in solving the real-world problems, using artificial intelligence, machine learning and deep learning algorithms, that will be used with the companion computers on the Drone.</li>
+        </ul>
+    </div>
+
+    <!-- Goals Section -->
+    <div id="goals" class="sectionpage2">
+        <h1>Goals</h1>
+        <ul>
+            <li>Educating Students about the DRONE.</li>
+            <li>Participating in Hackathons, Competitions and Tech events.</li>
+            <li>Promote Professional Exploration And Networking.</li>
+        </ul>
+    </div>
+
+    <!-- Executive Members Section -->
+    <div id="executive-members" class="sectionpage2">
+        <h1>Executive Members</h1>
+        <div class="row text-center">
+            <div class="col-md-3">
+                <img src="./nxt-duplicate-img.jpg" alt="Member 1" class="member-photo">
+                <h5>Club Advisor</h5>
+                <p>Dr. Jhon</p>
+            </div>
+            <div class="col-md-3">
+                <img src="./nxt-duplicate-img.jpg" alt="Member 2" class="member-photo">
+                <h5>Club Leadership</h5>
+                <p>Dr Olivia Johnson</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./nxt-duplicate-img.jpg" alt="Member 3" class="member-photo">
+                <h5>Lab Incharge</h5>
+                <p>Mr. Manuel Garcia</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./nxt-duplicate-img.jpg" alt="Member 4" class="member-photo">
+                <h5>President</h5>
+                <p>Mr. David Perez - ECE</p>
+            </div>
+            <div class="col-md-2">
+                <img src="./nxt-duplicate-img.jpg" alt="Member 4" class="member-photo">
+                <h5>Vice President</h5>
+                <p>Ms George Lee - CSE(AI&ML)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Internships Section -->
+    <div id="internships" class="sectionpage2">
+        <h1>Internships</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./TEAM WARRIORS..jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">TEAM INNOVATORS</h5>
+                        <button class="btn btn-primary" onclick="display('sectionWARRIORS')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./Team Mavericks.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">TEAM PIONEERS</h5>
+                        <button class="btn btn-primary" onclick="display('sectionmar')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./Team Experts.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">TEAM TECH EXPERTS</h5>
+                        <button class="btn btn-primary" onclick="display('sectionexperts')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./Team Visionaries.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">TEAM VISION</h5>
+                        <button class="btn btn-primary" onclick="display('sectionvision')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./TEAM WORK WIZARDS.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">TEAM WORK WIZARDS</h5>
+                        <button class="btn btn-primary" onclick="display('sectionWIZARDS')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./Team Achievers.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Team Achievers</h5>
+                        <button class="btn btn-primary" onclick="display('sectionAchievers')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./Team Specialists.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Team Specialists</h5>
+                        <button class="btn btn-primary" onclick="display('sectionspecial')">View More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm">
+                    <img src="./team vikas.jpg" class="card-img-top rounded-3" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">TEAM VIKAS</h5>
+                        <button class="btn btn-primary" onclick="display('sectionvikas')">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Students Details Section -->
+    <div id="students" class="sectionpage2">
+        <h1>Students Involved</h1>
+        <div class="header">
+            <h1>Students Involved in the Project</h1>
+            <p>A comprehensive list of students and their roles</p>
+        </div>
+    
+        <div class="table-container">
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Student Name</th>
+                        <th>Student Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr onclick="display('sectionvikas')"><td>1</td><td>IMADABATTUNI HARSHA VENKAT</td><td>Project Executive</td></tr>
+                    <tr><td>2</td><td>Jane Smith</td><td>System Integration Specialist</td></tr>
+                    <tr><td>3</td><td>Sam Williams</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>4</td><td>Olivia Johnson</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>5</td><td>Michael Brown</td><td>Technical Architect</td></tr>
+                    <tr><td>6</td><td>Daniel Davis</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>7</td><td>Manuel Garcia</td><td>Project Executive</td></tr>
+                    <tr><td>8</td><td>David Martinez</td><td>System Integration Specialist</td></tr>
+                    <tr><td>9</td><td>Lauren Lopez</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>10</td><td>Chris Harris</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>11</td><td>Sarah Clark</td><td>Technical Architect</td></tr>
+                    <tr><td>12</td><td>Emily Rodriguez</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>13</td><td>Victor Walker</td><td>Project Executive</td></tr>
+                    <tr><td>14</td><td>Thomas Young</td><td>System Integration Specialist</td></tr>
+                    <tr><td>15</td><td>Stephanie Adams</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>16</td><td>Samuel Nelson</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>17</td><td>Vanessa King</td><td>Technical Architect</td></tr>
+                    <tr><td>18</td><td>Michael Scott</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>19</td><td>Victoria Green</td><td>Project Executive</td></tr>
+                    <tr><td>20</td><td>Tom White</td><td>System Integration Specialist</td></tr>
+                    <tr><td>21</td><td>Maria Evans</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>22</td><td>Natalie Harris</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>23</td><td>Steven Carter</td><td>Technical Architect</td></tr>
+                    <tr><td>24</td><td>David Perez</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>25</td><td>Gloria Robinson</td><td>Project Executive</td></tr>
+                    <tr><td>26</td><td>George Lee</td><td>System Integration Specialist</td></tr>
+                    <tr><td>27</td><td>Paula Mitchell</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>28</td><td>Louis Hall</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>29</td><td>Rita Walker</td><td>Technical Architect</td></tr>
+                    <tr><td>30</td><td>Peter King</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>31</td><td>Krishna Abhishek</td><td>Project Executive</td></tr>
+                    <tr><td>32</td><td>Hima Harshitha</td><td>System Integration Specialist</td></tr>
+                    <tr><td>33</td><td>Keerthi Priya</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>34</td><td>Sania</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>35</td><td>D. Koteswara Rao</td><td>Technical Architect</td></tr>
+                    <tr><td>36</td><td>Satish</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>37</td><td>Y. Navya Sree</td><td>Project Executive</td></tr>
+                    <tr><td>38</td><td>Mukesh Balaji</td><td>System Integration Specialist</td></tr>
+                    <tr><td>39</td><td>Krishna Kishore</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>40</td><td>Harsha Vardhan</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>41</td><td>Mohini Sree</td><td>Technical Architect</td></tr>
+                    <tr><td>42</td><td>Geethika</td><td>Aviation Testing Specialist</td></tr>
+                    <tr><td>43</td><td>Pravallika</td><td>Project Executive</td></tr>
+                    <tr><td>44</td><td>Vasanth</td><td>System Integration Specialist</td></tr>
+                    <tr><td>45</td><td>Bhuvan Royal</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>46</td><td>Reshma Tanveer</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>47</td><td>Naga Sai Trinaya Chaluvadi</td><td>Project Executive</td></tr>
+                    <tr><td>48</td><td>G. Dhanesh</td><td>System Integration Specialist</td></tr>
+                    <tr><td>49</td><td>Ch. Akash</td><td>Quality Assurance Specialist</td></tr>
+                    <tr><td>50</td><td>Jameela</td><td>Safety Compliance Manager</td></tr>
+                    <tr><td>51</td><td>Tejaswi</td><td>Technical Architect</td></tr>
+                    <tr><td>52</td><td>Arunika</td><td>Project Executive</td></tr>
+                    <tr><td>53</td><td>T. Linsika</td><td>System Integration Specialist</td></tr>
+                    <tr><td>54</td><td>G. Lokesh</td><td>Quality Assurance Specialist</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+
+
+    </div>
+
+    <!-- Activities and Events Section -->
+    <div id="activities-events" class="sectionpage2">
+        <h1>Activities and Events</h1>
+        <h2>Monthly Meetings:</h2>
+        <ul>
+            <li>Foster Collaboration</li>
+            <li>Community Building</li>
+            <li>Project Planning</li>
+            <li>Feedback and Improvement</li>
+        </ul>
+        <div class="">
+            <div id="carouselExampleIndicators" class="carousel slide corr" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner carou">
+                    <div class="carousel-item active ">
+                        <img class="d-block w-100" src="./nxt-cor-1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-3.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-4.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-5.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-6.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <h2 class="pt-3">Activities:</h2>
+        <ul>
+            <li>Competitions and Challenges</li>
+            <li>Team-Building Activities</li>
+            <li>Hackathons</li>
+            <li>Feedback and Reflection Sessions</li>
+        </ul>
+        <div class="">
+            <div id="carouselExampleIndicators1" class="carousel slide corr" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner carou">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="./nxt-cor-5.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-8.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-9.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-10.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-1.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-2.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="./nxt-cor-3.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Collaborations Section -->
+    <div id="collaborations" class="sectionpage2">
+        <h1>Collaborations</h1>
+        <div></div>
+        <div class="collogos row">
+            <img src="./nxt-google.png" alt="Company 1 " class="colLogo  col-xs-4">
+            <img src="./nxt-Amazon_logo.svg.png" alt="Company 2 " class="colLogo logo2222 col-xs-4">
+            <img src="./nxt-facebook.png" alt="Company 3 " class="colLogo logo333 col-xs-4">
+        </div>
+    </div>
+
+    <!-- Workshops Conducted Section -->
+    <div id="workshops" class="sectionpage2">
+        <h1>Workshops Conducted</h1>
+        <h2 class="text-warning">Space Chase Pvt X HIET</h2>
+        <p>Conducted in collaboration with Space Chase Pvt.,Participants engaged in hands-on sessions to build and integrate drones while learning flight control techniques. The workshop provided practical experience and insights into drone assembly and operation.</p>
+        <div id="workshops1">
+            <div class="w-100 ">
+                <div id="carouselExampleIndicators2" class="carousel slide corr" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner carou">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="./nxt-cor-4.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-cor-5.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-cor-6.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h2 class="text-warning mt-4">Dronacharya Tech Hub X HIET </h2>
+        <p>Conducted in collaboration with Dronacharya Tech Hub , Participants learned drone basics, components, assembly, maintenance, calibration, and precision flying. Advanced sessions covered sensors, system integration, and industry roles. Teams gained hands-on experience and prepared for real-world applications, including internships.</p>
+        <div id="workshops1">
+            <div class="w-100">
+                <div id="carouselExampleIndicators3" class="carousel slide corr" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators3" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators3" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators3" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner carou">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="./nxt-cor-5.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-cor-8.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-cor-9.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators3" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators3" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workshops Conducted Section -->
+    <div id="Hackathon" class="sectionpage2">
+        <h3>Hackathon - Participant Certificates</h3>
+        <div id="workshops1">
+            <div class="w-100">
+                <div id="carouselExampleIndicators5" class="carousel slide corr cer" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators5" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators5" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators5" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner carou-cer">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="./nxt-certificate-nxt.png" alt="First slide">
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="d-block w-100" src="./nxt-certificates-vvit.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-certificates-research.png" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-certificates-remark.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-certificates-icfai.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-certificates-capable.png" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./nxt-certificates-c.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators5" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators5" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="display('sectiona')">Home Page</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 HARSHA institute of engineering and technology. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+    </footer>
+    </div>
+
+    <div id="sectionvikas">
+    <div id="background-unique">
+        <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+            HARSHA INSTITUTE OF ENGINEERING & TECHNOLOGY
+        </div> 
+        <header>
+            <h1 id="team-name-unique" >TEAM VIKAS</h1>
+        </header>
+        <section class="unique-section">
+            <h2>Project Title:</h2>
+            <p class="text-unique">Innovative Aerial Surveillance for Crime Prevention in Urban Environments.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Problem Statement:</h2>
+            <p class="text-unique">Urban areas face increasing challenges with crime, especially in densely populated regions. Traditional security systems often lack coverage or fail to detect potential threats in real-time. There is a pressing need for an intelligent system capable of providing 24/7 surveillance to identify criminal activity and prevent incidents before they escalate.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Proposed Solution:</h2>
+            <p class="text-unique">We propose a cutting-edge aerial surveillance solution that leverages drone technology equipped with real-time facial recognition and behavioral analysis. This system will autonomously patrol urban areas, identifying suspicious individuals or groups based on predefined patterns. Once an anomaly is detected, the system will instantly alert the relevant authorities with critical information, such as location, time, and potential threat level. By combining advanced AI, drones, and machine learning, this solution offers a proactive approach to urban safety and crime prevention.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Project Members and Their Roles:</h2>
+            <div id="list-unique">
+                <ul class="text-unique">
+                    <li><strong>Project Executive</strong> - Role Description</li>
+                    <li><strong>System Integration Specialist</strong> - Role Description</li>
+                    <li><strong>Technical Architect</strong> - Role Description</li>
+                    <li><strong>Quality Assurance Specialist</strong> - Role Description</li>
+                    <li><strong>Safety Compliance Manager</strong> - Role Description</li>
+                    <li><strong>Aviation Testing Specialist</strong> - Role Description</li>
+                </ul>
+            </div>
+        </section>
+        <section class="unique-section">
+            <h2>Requirements:</h2>
+            <ul class="text-unique">
+                <li>AI-based Facial Recognition Software</li>
+                <li>Drone with High-Definition Cameras</li>
+                <li>Real-Time Data Processing Unit</li>
+                <li>Secure Communication Links</li>
+                <li>Machine Learning Frameworks</li>
+                <li>Advanced GPS System</li>
+                <li>Night Vision Sensors</li>
+                <li>Battery Management System</li>
+            </ul>
+        </section>
+        
+        <div class="d-flex justify-content-center m-3 ">
+        <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+        </div>
+        <footer>
+            <p>&copy; 2025 HARSHA institute of engineering and technology. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a> .</p>
+        </footer>
+    </div>
+    </div>
+    
+    <div id="sectionWARRIORS">
+        <div id="background-unique">
+            <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+                HARSHA INSTITUTE OF ENGINEERING & TECHNOLOGY
+            </div> 
+            <header>
+                <h1 id="team-name-unique">TEAM THE INNOVATORS </h1>
+            </header>
+            <section class="unique-section">
+                <h2>Title:</h2>
+                <p class="text-unique">Smart Waste Management: Autonomous Drones for Waste Detection and Reporting</p>
+            </section>
+            <section class="unique-section">
+                <h2>Problem Statements:</h2>
+                <p class="text-unique">Current waste management systems face inefficiencies due to overflowing bins, missed pickups, and high costs. These issues impede sustainability goals, disrupt recycling programs, and contribute to environmental pollution. The need for real-time monitoring and better waste management practices has never been more urgent.</p>
+            </section>
+            <section class="unique-section">
+                <h2>Solution Description:</h2>
+                <p class="text-unique">The solution involves autonomous drones equipped with high-resolution cameras and ultrasonic sensors. These drones will be programmed to patrol city areas and detect waste, notifying authorities in real-time. The drones will also assess the severity of waste accumulation and generate detailed reports, enabling more efficient waste management strategies.</p>
+            </section>
+            <section class="unique-section">
+                <h2>Project Members and Their Roles:</h2>
+                <div id="list-unique">
+                    <ul class="text-unique">
+                        <li><strong>Project Lead </strong> - Project Manager (Tech Specialist)</li>
+                        <li><strong>System Integration Specialist </strong> - System Architect</li>
+                        <li><strong>Quality Assurance Manager </strong> - QA Specialist</li>
+                        <li><strong>Aviation Testing Expert </strong> - Drone Testing Specialist</li>
+                        <li><strong>Compliance Manager </strong> - Safety and Compliance Officer</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="unique-section">
+                <h2>Requirements:</h2>
+                <ul class="text-unique">
+                    <li>Wi-Fi, Telemetry</li>
+                    <li>Radio Controller</li>
+                    <li>Cameras, Gimbals, Lights</li>
+                    <li>Jetson Orin</li>
+                    <li>Video Transmission Module</li>
+                    <li>Ultrasonic Sensors</li>
+                    <li>Custom Drone Frame</li>
+                    <li>LiDAR Sensors</li>
+                </ul>
+            </section>
+            
+            <div class="d-flex justify-content-center m-3 ">
+                <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+            </div>
+            <footer class="">
+                <p>&copy; 2025 HARSHA INSTITUTE OF TECHNOLOGY. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="sectionmar">
+        <div id="background-unique">
+            <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+                HARSHA INSTITUTE OF ENGINEERING & TECHNOLOGY
+            </div> 
+            <header>
+                <h1 id="team-name-unique">TEAM THE PIONEERS</h1>
+            </header>
+            <section class="unique-section">
+                <h2>Title:</h2>
+                <p class="text-unique">Emergency Medical Drone Delivery</p>
+            </section>
+            <section class="unique-section">
+                <h2>Problem Statements:</h2>
+                <p class="text-unique">In emergency situations, delays in medical supply delivery can be life-threatening. Traditional methods often face challenges such as infrastructure damage, traffic congestion, and difficult terrains. Autonomous drone swarms can offer a reliable, fast, and efficient solution to these problems, ensuring timely delivery of critical supplies even to remote areas.</p>
+            </section>
+            <section class="unique-section">
+                <h2>Solution Description:</h2>
+                <p class="text-unique">We propose a swarm of autonomous drones equipped with advanced sensors (LIDAR, cameras, ultrasonic detectors) to deliver medical supplies in emergencies. These drones will operate with swarm intelligence, ensuring efficient task distribution and redundancy. The drones will also be equipped with GPS and other navigation systems to ensure precise and safe delivery.</p>
+            </section>
+            <section class="unique-section">
+                <h2>Project Members and Their Roles:</h2>
+                <div id="list-unique">
+                    <ul class="text-unique">
+                        <li><strong>Project Lead </strong> - Project Manager (Tech Specialist)</li>
+                        <li><strong>Technical Architect </strong> - Systems Design Expert</li>
+                        <li><strong>System Integration Specialist </strong> - Integration Expert</li>
+                        <li><strong>Quality Assurance Manager </strong> - QA Specialist</li>
+                        <li><strong>Aviation Testing Expert </strong> - Drone Testing Specialist</li>
+                        <li><strong>Safety Manager </strong> - Safety Officer</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="unique-section">
+                <h2>Requirements:</h2>
+                <ul class="text-unique">
+                    <li>Wi-Fi, Telemetry</li>
+                    <li>PID Controllers, GPS Navigation</li>
+                    <li>Cameras, Gimbals, Lights</li>
+                    <li>Jetson Nano & Raspberry Pi</li>
+                    <li>Transmission Module</li>
+                    <li>Ultrasonic Sensors</li>
+                    <li>Custom Drone Frame</li>
+                    <li>LIDAR Sensors</li>
+                </ul>
+            </section>
+            
+            <div class="d-flex justify-content-center m-3 ">
+                <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+            </div>
+            <footer class="">
+                <p>&copy; 2025 HARSHA INSTITUTE OF TECHNOLOGY. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="sectionexperts">
+        <div id="background-unique">
+            <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+                HARSHA INSTITUTE OF ENGINEERING & TECHNOLOGY
+            </div> 
+            <header>
+                <h1 id="team-name-unique">TEAM THE TECH EXPERTS</h1>
+            </header>
+            <section class="unique-section">
+                <h2>Title:</h2>
+                <p class="text-unique">Enhanced Security and Monitoring through Autonomous Drones</p>
+            </section>
+            <section class="unique-section">
+                <h2>Problem Statements:</h2>
+                <p class="text-unique">Traditional surveillance methods in critical areas such as ports and railway yards are ineffective in managing security, leading to breaches and thefts. These areas require enhanced real-time monitoring and cargo management to prevent losses and ensure safe operations. There is a strong need for professional drone solutions for better surveillance and monitoring of sensitive areas.</p>
+            </section>
+            <section class="unique-section">
+                <h2>Solution Description:</h2>
+                <p class="text-unique">Deploy autonomous drones equipped with high-resolution cameras and ultrasonic sensors to monitor cargo in ports and railway yards. These drones will be used for real-time surveillance, cargo tracking, theft prevention, and checking for spills or cracks. The system will improve operational efficiency and enhance security in high-risk zones.</p>
+            </section>
+            <section class="unique-section">
+                <h2>Project Members and Their Roles:</h2>
+                <div id="list-unique">
+                    <ul class="text-unique">
+                        <li><strong>Project Lead </strong> - Project Manager (Tech Specialist)</li>
+                        <li><strong>Technical Architect </strong> - Systems Design Expert</li>
+                        <li><strong>System Integration Specialist </strong> - Integration Expert</li>
+                        <li><strong>Quality Assurance Manager </strong> - QA Specialist</li>
+                        <li><strong>Aviation Testing Expert </strong> - Drone Testing Specialist</li>
+                        <li><strong>Compliance Manager </strong> - Safety Officer</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="unique-section">
+                <h2>Requirements:</h2>
+                <ul class="text-unique">
+                    <li>Wi-Fi, Telemetry</li>
+                    <li>Radio Controller</li>
+                    <li>Cameras, Gimbals, Lights</li>
+                    <li>Jetson Orin</li>
+                    <li>Transmission Module</li>
+                    <li>Ultrasonic Sensors</li>
+                    <li>Custom Drone Frame</li>
+                    <li>LiDAR Sensors</li>
+                </ul>
+            </section>
+            
+            <div class="d-flex justify-content-center m-3 ">
+                <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+            </div>
+            <footer class="">
+                <p>&copy; 2025 HARSHA INSTITUTE OF TECHNOLOGY. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="sectionvision">
+    <div id="background-unique">
+        <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+            HARSHA INSTITUTE OF ENGINEERING & TECHNOLOGY
+        </div> 
+        <header>
+            <h1 id="team-name-unique">TEAM THE VISION</h1>
+        </header>
+        <section class="unique-section">
+            <h2>Title:</h2>
+            <p class="text-unique">SKE EYE–Leveraging drones for License Plate Recognition </p>
+        </section>
+        <section class="unique-section">
+            <h2>Problem Statements:</h2>
+            <p class="text-unique">Traditional security systems lack coverage and flexibility, making restricted areas vulnerable to unauthorized activities. Urban areas face traffic congestion, accidents, and inefficiency in monitoring traffic patterns. Slow, inaccurate manual processes contribute to errors and delays. Conventional enforcement struggles to maintain effective surveillance in remote or crowded areas. The Sky Eye project aims to address these issues by using drones equipped with license plate recognition and surveillance capabilities to enhance security, traffic management, and public safety.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Solution Description:</h2>
+            <p class="text-unique">Deploy drones with high-resolution cameras and NVIDIA Jetson modules for real-time monitoring of restricted areas and high-traffic zones. These drones use AI-driven LPR technology for fast and accurate vehicle identification, monitor traffic patterns, detect violations, and provide real-time alerts to authorities. They offer enhanced coverage, especially in large, remote, or crowded areas, improving security, traffic management, and public safety with AI-powered efficiency.
+                Key Features:
+                1.	License Plate Recognition (LPR)
+                2.	Traffic and Surveillance Analysis:
+                3.	RealTime Alerts
+                4.	Enhanced Coverage
+                5.	AI Powered Efficiency</p>
+        </section>
+        <section class="unique-section">
+            <h2>Project Members and Their Roles:</h2>
+            <div id="list-unique">
+                <ul class="text-unique">
+                    <li><strong>Project Executive</strong> - Role Description</li>
+                    <li><strong>System Integration Specialist</strong> - Role Description</li>
+                    <li><strong>Technical Architect</strong> - Role Description</li>
+                    <li><strong>Quality Assurance Specialist</strong> - Role Description</li>
+                    <li><strong>Safety Compliance Manager</strong> - Role Description</li>
+                    <li><strong>Aviation Testing Specialist</strong> - Role Description</li>
+                </ul>
+            </div>
+        </section>
+        <section class="unique-section">
+            <h2>Requirements:</h2>
+            <ul class="text-unique">
+                <li>4G/5G or satellite communication modules</li>
+                <li>Autonomous flight control with GPS integration</li>
+                <li>Drone frame, camera gimbals, and mounting for NVIDIA Jetson module</li>
+                <li>NVIDIA Jetson Xavier</li>
+                <li>Custom-designed mounts for LPR cameras</li>
+                <li>High-definition camera modules </li>
+                <li>Custom drone frame or mounts for payload stabilization</li>
+                <li>Dual-camera setup for LPR and obstacle detection, including infrared sensors for night operation</li>
+            </ul>
+        </section>
+        
+        <div class="d-flex justify-content-center m-3 ">
+            <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+        </div>
+        <footer class="">
+            <p>&copy; 2025 HARSHA institute of engineering and technology. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+        </footer>
+    </div>
+    </div>
+
+    <div id="sectionWIZARDS">
+    <div id="background-unique">
+        <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+            DHANEKULA INSTITUTE OF ENGINEERING & TECHNOLOGY
+        </div> 
+        <header>
+            <h1 id="team-name-unique">TEAM THE WORK WIZARDS</h1>
+        </header>
+        <section class="unique-section">
+            <h2>Title:</h2>
+            <p class="text-unique">Swarm of drones for monitoring wildlife species </p>
+        </section>
+        <section class="unique-section">
+            <h2>Problem Statements:</h2>
+            <p class="text-unique">Traditional methods of monitoring potentially dangerous wild animal species expose humans and animals to danger, disrupt natural habitats, and are inefficient in collecting data. There is a need for a system that can safely track and monitor these species from a distance, collect data on their behavior and habitat conditions, detect injuries, and count endangered species. Using swarms of drones can address these challenges by covering vast areas simultaneously without human intervention.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Solution Description:</h2>
+            <p class="text-unique">Deploy a swarm of autonomous drones to monitor endangered species, collecting data on their behavior and habitat without human intervention. Drones will detect injuries, provide species counts, and capture images and videos.
+                Key Features:
+                1.	Efficient, autonomous coverage of vast areas.
+                2.	AI-driven species identification and behavior monitoring.
+                3.	Real-time data sharing and reporting.
+                4.	Customizable for specific tasks like habitat mapping.
+                5.	Collaboration with conservation teams and forest guards.
+                This solution enhances wildlife monitoring and conservation efforts efficiently and safely.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Project Members and Their Roles:</h2>
+            <div id="list-unique">
+                <ul class="text-unique">
+                    <li><strong>Project Executive</strong> - Role Description</li>
+                    <li><strong>System Integration Specialist</strong> - Role Description</li>
+                    <li><strong>Technical Architect</strong> - Role Description</li>
+                    <li><strong>Quality Assurance Specialist</strong> - Role Description</li>
+                    <li><strong>Safety Compliance Manager</strong> - Role Description</li>
+                    <li><strong>Aviation Testing Specialist</strong> - Role Description</li>
+                </ul>
+            </div>
+        </section>
+        <section class="unique-section">
+            <h2>Requirements:</h2>
+            <ul class="text-unique">
+                <li>Wi-Fi, Telemetry</li>
+                <li>Radio controller, GPS navigation</li>
+                <li>Cameras, Gimbals, Lights</li>
+                <li>Jetson Orin</li>
+                <li>Video transmission Module</li>
+                <li>Ultrasonic Sensors</li>
+                <li>Custom Drone Frame</li>
+                <li>Lidar Sensors</li>
+            </ul>
+        </section>
+        
+        <div class="d-flex justify-content-center m-3 ">
+            <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+        </div>
+        <footer class="">
+            <p>&copy; 2025 Dhanekula institute of engineering and technology. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+        </footer>
+    </div>
+    </div>
+
+    <div id="sectionAchievers">
+    <div id="background-unique">
+        <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+            DHANEKULA INSTITUTE OF ENGINEERING & TECHNOLOGY
+        </div> 
+        <header>
+            <h1 id="team-name-unique">TEAM THE ACHIEVERS</h1>
+        </header>
+        <section class="unique-section">
+            <h2>Title:</h2>
+            <p class="text-unique">Early detection of forest fires Project </p>
+        </section>
+        <section class="unique-section">
+            <h2>Problem Statements:</h2>
+            <p class="text-unique">Traditional methods of detecting forest fires are slow and often ineffective, leading to extensive damage to the environment, property, and human lives. Early detection is crucial to prevent the spread of fires, but challenges like limited visibility and vast forest areas hinder timely identification. There is a need for advanced technology to enable early and accurate detection of forest fires to improve response times and minimize damage. Utilizing drones equipped with sensors and real-time monitoring capabilities can address these challenges and enhance forest fire management.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Solution Description:</h2>
+            <p class="text-unique">Deploy early fire detection drones equipped with advanced sensors (thermal imaging, infrared cameras, smoke detectors) to identify fires at their earliest stages. These drones autonomously patrol designated areas, providing real-time data such as coordinates, heat maps, and live video to the control center. This enables immediate response and precise deployment of resources, minimizing damage and enhancing safety.
+                Key Features:
+                    1.	Autonomous navigation and real-time monitoring.
+                    2.	Integration with IoT and fire management systems.
+                    3.	Cost-effective and scalable solutions for diverse environments.
+                    This solution enhances fire detection and response, ensuring timely and efficient management of fire-related incidents.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Project Members and Their Roles:</h2>
+            <div id="list-unique">
+                <ul class="text-unique">
+                    <li><strong>Project Executive</strong> - Role Description</li>
+                    <li><strong>System Integration Specialist</strong> - Role Description</li>
+                    <li><strong>Technical Architect</strong> - Role Description</li>
+                    <li><strong>Quality Assurance Specialist</strong> - Role Description</li>
+                    <li><strong>Safety Compliance Manager</strong> - Role Description</li>
+                    <li><strong>Aviation Testing Specialist</strong> - Role Description</li>
+                </ul>
+            </div>
+        </section>
+        <section class="unique-section">
+            <h2>Requirements:</h2>
+            <ul class="text-unique">
+                <li>Wi-Fi, Telemetry</li>
+                <li>Radio Controller.</li>
+                <li>Thermal camera, transmission modules</li>
+                <li>Jetson Nano</li>
+                <li>transmission Module</li>
+                <li>Gas sensors</li>
+                <li>Custom Drone Frame</li>
+                <li>Optical sensors</li>
+            </ul>
+        </section>
+        
+        <div class="d-flex justify-content-center m-3 ">
+            <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+        </div>
+        <footer class="">
+            <p>&copy; 2025 Dhanekula institute of engineering and technology. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+        </footer>
+    </div>
+    </div>
+
+    <div id="sectionspecial">
+    <div id="background-unique">
+        <div class="container-fluid clg-name-unique sunny-morning-gradient-unique">
+            DHANEKULA INSTITUTE OF ENGINEERING & TECHNOLOGY
+        </div> 
+        <header>
+            <h1 id="team-name-unique">TEAM THE SPECIALISTS</h1>
+        </header>
+        <section class="unique-section">
+            <h2>Title:</h2>
+            <p class="text-unique">3D Landslide Mapping and Rescue Support System Using Drones</p>
+        </section>
+        <section class="unique-section">
+            <h2>Problem Statements:</h2>
+            <p class="text-unique">Landslides cause massive damage to lives, property, and the environment. After a landslide, rescuing people becomes difficult 
+                Because:
+                •	There is no real-time data about the terrain.
+                •	Finding safe paths for rescue teams takes too much time.
+                •	Manual surveys are risky and slow.
+                The Impact:
+                •	People lose their lives and homes.
+                •	Roads and communication systems are disrupted.
+                •	The environment is severely affected.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Solution Description:</h2>
+            <p class="text-unique">To address the challenges of landslide rescue operations, we propose using drones equipped with advanced sensors and AI technology:
+                Pre-Landslide:
+                Capture and Store Data: Drones will capture and store terrain data to create a detailed baseline map.
+                Post-Landslide:
+                      Gather New Data: Drones will collect new terrain data to generate updated maps.
+                     Analysis: Advanced software will compare old and new maps to identify safe and unsafe areas.
+                     Communication: These findings will be shared with rescue teams in real-        time, speeding up rescue operations.
+                This solution provides accurate, realtime information on safe routes and hazardous zones, enhancing the efficiency and safety of rescue efforts.</p>
+        </section>
+        <section class="unique-section">
+            <h2>Project Members and Their Roles:</h2>
+            <div id="list-unique">
+                <ul class="text-unique">
+                    <li><strong>Project Executive</strong> - Role Description</li>
+                    <li><strong>System Integration Specialist</strong> - Role Description</li>
+                    <li><strong>Technical Architect</strong> - Role Description</li>
+                    <li><strong>Quality Assurance Specialist</strong> - Role Description</li>
+                    <li><strong>Safety Compliance Manager</strong> - Role Description</li>
+                    <li><strong>Aviation Testing Specialist</strong> - Role Description</li>
+                </ul>
+            </div>
+        </section>
+        <section class="unique-section">
+            <h2>Requirements:</h2>
+            <ul class="text-unique">
+                <li>Wi-Fi, Telemetry</li>
+                <li>Radio Controller (ESC)</li>
+                <li>Lidar Sensors</li>
+                <li>Jetson Orin</li>
+                <li>Video transmission Module</li>
+                <li>Ultrasonic Sensors</li>
+                <li>Custom Drone Frame</li>
+                <li>Communication Module (e.g., Wi-Fi, RF)</li>
+            </ul>
+        </section>
+        
+        <div class="d-flex justify-content-center m-3 ">
+            <button class="btn btn-primary" onclick="display('sectionb')">Back</button>
+        </div>
+        <footer class="">
+            <p>&copy; 2025 Dhanekula institute of engineering and technology. All rights reserved <a target="_blank" href="https://iharsha.online/">OWNER</a>.</p>
+        </footer>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb3v6Y0Q8q0JHRXBpbz1D0iLsZOnX1dM/p2v9O4gDMWjR+eU4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0XnYvZ7zD3o2zM8r+9+dkD9Fvq1Xj0IUWwJwfu0Vw5HED1z5" crossorigin="anonymous"></script>
+</body>
+</html>
